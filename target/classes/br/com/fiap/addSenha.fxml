@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #0d0d0d;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.fiap.AddSenhaController">
+   <top>
+      <FlowPane alignment="CENTER" columnHalignment="CENTER" prefHeight="85.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Senhas" textFill="#00ff2b">
+               <font>
+                  <Font name="Consolas Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </FlowPane>
+   </top>
+   <center>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Crie uma nova senha:" textFill="#00ff2b">
+               <font>
+                  <Font name="Consolas Bold" size="15.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="txtFieldNovaSenha" promptText="Nova Senha" style="-fx-background-color: #1f1f1f;" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </GridPane.margin>
+            </PasswordField>
+            <PasswordField fx:id="txtFieldConfSenha" promptText="Confirme a Senha" style="-fx-background-color: #1f1f1f;" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </GridPane.margin>
+            </PasswordField>
+            <TextArea fx:id="txtAreaDesc" prefHeight="200.0" prefWidth="200.0" promptText="Desc. Senha" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </GridPane.margin>
+            </TextArea>
+            <Button mnemonicParsing="false" onAction="#cadastrar" style="-fx-background-color: #00ff2b;" text="Cadastrar" textFill="WHITE" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Consolas Bold" size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </GridPane>
+   </center>
+   <right>
+      <GridPane prefHeight="315.0" prefWidth="360.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="64.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="220.0" minHeight="10.0" prefHeight="188.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="102.0" minHeight="10.0" prefHeight="66.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Suas senhas:" textFill="#00ff2b">
+               <font>
+                  <Font name="Consolas Bold" size="15.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tbViewSenhas" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+              <columns>
+                <TableColumn fx:id="tbColumnDesc" prefWidth="165.0" text="Descrição" />
+                <TableColumn fx:id="tbColumnSenha" prefWidth="164.0" text="Senha" />
+              </columns>
+               <GridPane.margin>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </GridPane.margin>
+            </TableView>
+            <Button mnemonicParsing="false" onAction="#atualizar" style="-fx-background-color: #00ff2b;" text="Atualizar" textFill="WHITE" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Consolas Bold" size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </GridPane>
+   </right>
+</BorderPane>
